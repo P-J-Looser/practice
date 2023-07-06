@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&family=Kumbh+Sans:wght@400;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Kumbh Sans', sans-serif;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(hsl(273, 75%, 66%),hsl(240, 73%, 65%));
+            font-size: 16px; 
+        }
+
+        .content {
+            width: 65%;
+            border-radius: 50px;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+
+        .inner {
+            
+            position: relative;
+            width: 95%;
+            display: flex;
+            justify-content: stretch;
+            background-color: white;
+            border-radius: 25px;
+            box-shadow: 8px 50px 40px -15px rgba(0,0,0,0.2);
+        }
+
+        .desktop {
+            flex: 1;
+            background-image: url(images/bg-pattern-desktop.svg);
+            background-repeat: no-repeat;
+            background-position: 118% 65%;
+            overflow: hidden;
+        }
+    
+        .desktop img {
+            margin: 60px auto;
+            transform: translateX(-18%);
+            overflow: hidden;
+        }
+
+        .desktop .box {
+            position: absolute;
+            top: 40%;
+            left: -60px;
+        }
+
+        .desktop .box img {
+            margin: 0;
+            padding: 0;
+        }
+
+        .faq {
+            margin: 5px;
+            flex: 1;
+            display: flex;
+        }
+
+        .faq .in {
+            display: flex;
+            padding: 0 7rem 0 1rem;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .faq .in div {
+            padding: 0;
+        }
+
+        .faq div {
+            padding: 10px 25px;
+            
+        }
+
+        .faq .question {
+            transition: color 0.1s;
+            cursor: pointer;
+            
+        }
+
+        .faq .question:hover {
+            color: rgb(240, 160, 11);
+        }
+
+        
+        .isactive > .first > p {
+            font-weight: bold;
+        }
+
+        .isactive > .answer {
+            display: block;
+            width: 95%;
+            padding-bottom: 1rem;
+        }
+
+        .isactive > .first > img {
+            transform: rotate(180deg);
+        }
+
+        .first > img {
+            transition: transform 0.15s ease;
+        }
+
+        .answer {
+            color: gray;
+            font-size: 12px;
+            display: none;
+            transition: 0.15s ease;
+        }
+
+
+        .ison {
+            font-weight: bold;
+        }
+
+        .first .q1 {
+            background-color: orange;
+        }
+
+        .first {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 14px;
+        }
+
+        .in h1 {
+            margin-bottom: 1rem;
+        }
+
+        .qbox {                    
+            border-bottom: 1px solid rgba(0,0,0,0.2);
+        }
+
+        
+        
+    </style>
+</head>
+<body>
+    
+    <div class="content">
+
+        <div class="inner">
+
+            <div class="desktop">
+
+                <img src="images/illustration-woman-online-desktop.svg" alt="desktop">
+                <div class="box">
+                <img src="images/illustration-box-desktop.svg" alt="box">
+                </div>
+                
+            </div>
+
+            <div class="faq">
+
+                <div class="in">
+
+                    <p class="title"><h1>FAQ</h1></p>
+                        <div class="qbox q1" onclick="toggle('.q1')">
+                            <div class="first">
+                            <p class="question">How many team members can I invite?</p>
+                            <img src="images/icon-arrow-down.svg" alt="down-arrow">
+                            </div>
+                            <p class="answer">You can invite upto 2 additional users on the Free plan. There is no limit on team members for the Premium plan</p>
+                        </div>
+                        <div class="qbox q2" onclick="toggle('.q2')">
+                            <div class="first">
+                            <p class="question">What is the maximum file upload size?</p>
+                            <img src="images/icon-arrow-down.svg" alt="down-arrow">
+                            </div>
+                            <p class="answer isactive">No more than 2GB. All the files in your account must fit your allotted storage space</p>
+                        </div>
+                        <div class="qbox q3" onclick="toggle('.q3')">
+                            <div class="first">
+                            <p class="question">How do i reset my password?</p>
+                            <img src="images/icon-arrow-down.svg" alt="down-arrow">
+                            </div>
+                            <p class="answer">Click "Forgot password" from the login page or "Change password" from your profile page. A reset link will be emailed to you. </p>
+                        </div>
+                        <div class="qbox q4" onclick="toggle('.q4')">
+                            <div class="first">
+                            <p class="question">Can i cancel my subscription?</p>
+                            <img src="images/icon-arrow-down.svg" alt="down-arrow">
+                            </div>
+                            <p class="answer">Yes! Send us a message and we'll process your request no question asked.</p>
+                        </div>
+                        <div class="qbox q5" onclick="toggle('.q5')">
+                            <div class="first">
+                            <p class="question">Do you provide additional support?</p>
+                            <img src="images/icon-arrow-down.svg" alt="down-arrow">
+                            </div>
+                            <p class="answer">Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+                        </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+         
+        function toggle(para) {
+            let p = document.querySelector(`${para}`);
+
+            if(!p.classList.contains('isactive')){
+                prev();
+                p.classList.add("isactive");
+            }
+
+            else {
+                p.classList.remove('isactive');
+            }
+        }
+
+        function prev() {
+            let pre = document.querySelector('.isactive');
+            if (pre){
+                pre.classList.remove('isactive');
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+
